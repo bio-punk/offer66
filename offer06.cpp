@@ -16,9 +16,12 @@ public:
         	int mid = (head + tail) / 2;
         	if (1 == tail - head) { min = rotateArray[tail]; break; }
         	if (rotateArray[head] < rotateArray[tail]) { min = rotateArray[head]; break; }
+        	
         	if (rotateArray[mid] > rotateArray[tail]) { head = mid; continue; }
         	if (rotateArray[head] > rotateArray[mid]) { tail = mid; continue; }
-        	if (rotateArray[head] == rotateArray[tail]) { tail--; }
+        	
+        	head++;
+        	tail--;
         }
 
         return min;
